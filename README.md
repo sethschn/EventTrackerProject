@@ -15,7 +15,7 @@ This project tracks a persons emotion throughout the day allowing them to log ho
 --------|--------|--------|--------|--------|
 **GET** | /api/trackers|       |Collection of all *tracker event entries* | **List** or **Collection** endpoint
 **GET** | /api/trackers/{trackerId}| | Representation of entry at id number-- {trackerId}| **Retrieve** endpoint
-**POST** | /api/trackers| Representation of new *tracker event* entry| Description of the result of the operation| **Create** endpoint
+**POST** | /api/trackers/{emotionId}| Representation of new *tracker event* entry| Description of the result of the operation| **Create** endpoint
 **PUT** | api/trackers/{trackerId}| Representation of a *new version* of entry at id number--{trackerId}| | **Replace** endpoint
 **DELETE** | api/trackers/{trackerId}| | | **Delete** route
 
