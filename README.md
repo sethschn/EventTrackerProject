@@ -6,6 +6,20 @@
 This project tracks a persons emotion throughout the day allowing them to log how they are feeling.
 
 #### How to Use
+
+
+
+
+### **Table of REST endpoints**
+**HTTP Verb**| **URI**| **Request Body**|**Response Body**|**Purpose**|
+--------|--------|--------|--------|--------|
+**GET** | /api/trackers|       |Collection of all *tracker event entries* | **List** or **Collection** endpoint
+**GET** | /api/trackers/{trackerId}| | Representation of entry at id number-- {trackerId}| **Retrieve** endpoint
+**POST** | /api/trackers| Representation of new *tracker event* entry| Description of the result of the operation| **Create** endpoint
+**PUT** | api/trackers/{trackerId}| Representation of a *new version* of entry at id number--{trackerId}| | **Replace** endpoint
+**DELETE** | api/trackers/{trackerId}| | | **Delete** route
+
+
 #### Table of REST Endpoints
 | Return Type     | Route                           | Functionality                            |
 |-----------------|---------------------------------|------------------------------------------|
