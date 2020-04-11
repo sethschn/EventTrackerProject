@@ -16,8 +16,14 @@ This project tracks a persons emotion throughout the day allowing them to log ho
 **GET** | /api/trackers|       |Collection of all *tracker event entries* | **List** or **Collection** endpoint
 **GET** | /api/trackers/{trackerId}| | Representation of entry at id number-- {trackerId}| **Retrieve** endpoint
 **POST** | /api/trackers/{emotionId}| Representation of new *tracker event* entry| Description of the result of the operation| **Create** endpoint
-**PUT** | api/trackers/{trackerId}| Representation of a *new version* of entry at id number--{trackerId}| | **Replace** endpoint
+**PUT** | api/trackers/{trackerId}| Representation of a *updated version* of entry at id number--{trackerId}| | **Replace** endpoint
 **DELETE** | api/trackers/{trackerId}| | | **Delete** route
+--------|--------|--------|--------|--------|
+**GET** | /api/emotions|       |Collection of all *emotion entries* | **List** or **Collection** endpoint
+**GET** | /api/emotions/{emotionId}| | Representation of entry at id number-- {emotionId}| **Retrieve** endpoint
+**POST** | /api/emotions| Representation of new *emotion* entry| Description of the result of the operation| **Create** endpoint
+**PUT** | api/emotions/{emotionId}| Representation of a *updated version* of entry at id number--{emotionId}| | **Replace** endpoint
+**DELETE** | api/emotions/{emotionId}| | | **Delete** route
 
 ### Technologies Used
 - Gradle
