@@ -6,12 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Dummy {
+public class Emotion {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	private String category;
+	private String description;
+
+	public Emotion() {
+		super();
+	}
 
 	public int getId() {
 		return id;
@@ -29,21 +35,36 @@ public class Dummy {
 		this.name = name;
 	}
 
-	public Dummy() {
-		super();
+	public String getCategory() {
+		return category;
 	}
 
-	public Dummy(int id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Dummy [id=").append(id).append(", name=").append(name).append("]");
+		builder.append("Emotion [id=").append(id).append(", name=").append(name).append(", category=").append(category)
+				.append(", description=").append(description).append("]");
 		return builder.toString();
+	}
+
+	public Emotion(int id, String name, String category, String description) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.category = category;
+		this.description = description;
 	}
 
 	@Override
@@ -62,7 +83,7 @@ public class Dummy {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Dummy other = (Dummy) obj;
+		Emotion other = (Emotion) obj;
 		if (id != other.id)
 			return false;
 		return true;
