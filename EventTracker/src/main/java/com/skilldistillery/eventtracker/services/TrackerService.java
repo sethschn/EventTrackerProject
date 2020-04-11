@@ -11,7 +11,7 @@ public interface TrackerService {
 
 	Tracker findTrackerById(Integer id);
 
-	Tracker createTracker(Tracker tracker);
+	Tracker createTracker(Tracker tracker, Integer emotionId);
 
 	Tracker updateTracker(Tracker tracker, Integer trackerId);
 

@@ -17,10 +17,22 @@ public class TrackerServiceImpl implements TrackerService {
 
 	@Autowired
 	private TrackerRepository trackerRepo;
+	@Autowired
+	private EmotionRepository emotionRepo;
 
 
 	@Override
-	public Tracker createTracker(Tracker tracker) {
+	public Tracker createTracker(Tracker tracker, Integer emotionId) {
+		Optional<Emotion> optEmotion = emotionRepo.findById(emotionId);
+		if (optEmotion.isPresent()) {
+			Emotion emotion = optEmotion.get();
+			tracker.setEmotion(emotion);
+		}else {
+			Optional<Emotion> optEm = emotionRepo.findById(1);
+			if (optEm.isPresent()) {
+				tracker.setEmotion(optEm.get());
+			}
+		}
 		tracker.setLogDate(LocalDateTime.now());
 		return trackerRepo.saveAndFlush(tracker);
 	}
