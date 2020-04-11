@@ -3,7 +3,7 @@
 #### Week 12 Homework for Skill Distillery
 
 ### Overview
-This project tracks a persons emotion throughout the day allowing them to log how they are feeling.
+This project tracks a persons emotion throughout the day allowing them to log how they are feeling. This project is focused on creating RESTFUL Services and to demonstrate knowledge on the REST.
 
 #### How to Use
 
@@ -18,16 +18,6 @@ This project tracks a persons emotion throughout the day allowing them to log ho
 **POST** | /api/trackers| Representation of new *tracker event* entry| Description of the result of the operation| **Create** endpoint
 **PUT** | api/trackers/{trackerId}| Representation of a *new version* of entry at id number--{trackerId}| | **Replace** endpoint
 **DELETE** | api/trackers/{trackerId}| | | **Delete** route
-
-
-#### Table of REST Endpoints
-| Return Type     | Route                           | Functionality                            |
-|-----------------|---------------------------------|------------------------------------------|
-| `List<Tracker>` |`GET api/trackers`               | Gets all logged Tracker events           |
-| `Tracker`       |`GET api/tracker/{trackerId}`    | Gets one event from tracker by id        |
-| `Tracker`       |`POST api/trackers/{emotionId}`  | Creates a new entry in the tracker table |
-| `Tracker`       |`PUT api/trackers/{trackerId}`   | Replaces an existing tracker event by id |
-| `Boolean`       |`DELETE api/trackers/{trackerId}`| Deletes an existing tracker event by id  |
 
 ### Technologies Used
 - Gradle
