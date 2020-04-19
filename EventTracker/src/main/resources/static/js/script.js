@@ -192,12 +192,47 @@ function displayEvent(event){
 
 		let submitelement = document.createElement('input'); // Append Submit Button
 		submitelement.setAttribute("type", "submit");
-		submitelement.setAttribute("name", "dsubmit");
+		submitelement.setAttribute("name", "submit");
 		submitelement.setAttribute("value", "Submit");
 		editform.appendChild(submitelement);
 		submitelement.addEventListener('click',updateEvent );
+		
+		let deleteelement = document.createElement('input'); // Append Submit Button
+		deleteelement.setAttribute("type", "submit");
+		deleteelement.setAttribute("name", "delete");
+		deleteelement.setAttribute("value", "Delete");
+		editform.appendChild(deleteelement);
+		deleteelement.addEventListener('click',deleteEvent );
 
   	}
+}
+
+function deleteEvent(e){
+	e.preventDefault();
+	let form = e.target.parentElement;
+	var xhr = new XMLHttpRequest();
+	xhr.open('DELETE', 'api/trackers/'+form.id.value, true);
+
+	xhr.setRequestHeader("Content-type", "application/json"); // Specify JSON request body
+
+	xhr.onreadystatechange = function() {
+	  if (xhr.readyState === 4 ) {
+	    if ( xhr.status == 200 || xhr.status == 204 ) { // Ok or Created
+	      //var data = JSON.parse(xhr.responseText);
+	      //console.log(data);
+	      getAllEvents();
+	    }
+	    else {
+	      console.log("DELETE request failed.");
+	      console.error(xhr.status + ': ' + xhr.responseText);
+	    }
+	  }
+	};
+
+	//var userObjectJson = JSON.stringify(userObject); // Convert JS object to JSON string
+
+	xhr.send();	
+	
 }
 
 function updateEvent(e){
