@@ -100,13 +100,21 @@ function displayEvent(event){
 	if (event == null){
 		dataDiv.textContent = 'Event not found';
 	}else{
-		let title = document.createElement('h1');
-		title.textContent = event.emotion.name;
-		dataDiv.appendChild(title);
+		let eName = document.createElement('h4');
+		eName.textContent = "Emotion name: "+event.emotion.name+" "+event.logDate;
+		dataDiv.appendChild(eName);
+
+		let eCat = document.createElement('h4');
+		eCat.textContent = "Category: "+event.emotion.category;
+		dataDiv.appendChild(eCat);
 		
-		let description = document.createElement('blockquote');
-		description.textContent = event.description;
+		let description = document.createElement('h4');
+		description.textContent = "Description: "+event.description;
 		dataDiv.appendChild(description);
+
+		let description2 = document.createElement('h4');
+		description2.textContent = "Emotion description: "+event.emotion.description;
+		dataDiv.appendChild(description2);
 
 		let editform = document.createElement('form');
 		editform.name = 'editEventForm';
@@ -125,6 +133,7 @@ function displayEvent(event){
 		let inputelement = document.createElement('input'); // Create Input Field for Name
 		inputelement.setAttribute("type", "text");
 		inputelement.setAttribute("name", "description");
+		inputelement.size = "75";
 		inputelement.value = event.description;
 		editform.appendChild(inputelement);
 
